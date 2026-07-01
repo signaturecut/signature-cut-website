@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Signature Cut Studios | Cinematic Video Editing</title>
+  <meta name="description" content="Signature Cut Studios crafts high-end, cinematic visual experiences for bold brands. Every frame is deliberate. Every shot is signature." />
+
+  <link rel="preload" as="video" href="https://pub-0746497d0a204ba18d7c49f52f40c179.r2.dev/background-v1.mp4">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=Montserrat:wght@200;300;400&display=swap"
+    rel="stylesheet"
+  />
+  <script type="module" crossorigin src="/assets/index-BWoYnixQ.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-CKQMbJf-.css">
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <a href="#home" class="logo">
+      <img src="/logo/Logo sc purple without bg_2.png" alt="Signature Cut Studios" class="logo-img" />
+    </a>
+    
+    <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+
+    <div class="nav-links">
+      <a href="#home">HOME</a>
+      <a href="#work">WORK</a>
+      <a href="#about">ABOUT</a>
+      <a href="#contact">CONTACT</a>
+    </div>
+  </nav>
+
+  <div id="home" class="hero">
+    
+    <video id="bg-video-1" class="bg-video" src="https://pub-0746497d0a204ba18d7c49f52f40c179.r2.dev/background-v1.mp4" poster="/background-v1-img.webp" preload="metadata" fetchpriority="high" autoplay muted playsinline></video>
+    <video id="bg-video-2" class="bg-video" src="https://pub-0746497d0a204ba18d7c49f52f40c179.r2.dev/background-v1.mp4" poster="/background-v1-img.webp" preload="metadata" fetchpriority="high" muted playsinline></video>
+    
+    <div class="bg-overlay"></div>
+
+    <canvas class="sequence-canvas"></canvas>
+    <div class="branding" hidden>
+      <h1>Signature</h1>
+      <p class="branding-rule"></p>
+      <h2>CUT STUDIOS</h2>
+    </div>
+    <div class="scroll-text">
+      <span class="scroll-icon">↓</span>
+      SCROLL TO ENTER
+    </div>
+  </div>
+
+  <div class="scroll-space"></div>
+
+  <main class="content-wrapper">
+
+    <section id="work" class="page-section work-section">
+      <button class="carousel-btn prev-btn" aria-label="Previous">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.8"
+             stroke-linecap="butt" stroke-linejoin="miter">
+          <polyline points="15 19 8 12 15 5"></polyline>
+        </svg>
+      </button>
+
+      <div class="container">
+        <p class="section-eyebrow center">— PREVIOUS PROJECTS —</p>
+        <h2 class="section-title center">WORK</h2>
+
+        <div class="carousel-area">
+          <div class="carousel-container">
+            <div class="carousel">
+              
+              <div class="carousel-item" style="--i: 0;">
+                <video data-src="https://pub-0746497d0a204ba18d7c49f52f40c179.r2.dev/vid-1.mp4" poster="/vid-1-img.webp" preload="metadata" fetchpriority="low" muted loop playsinline></video>
+                <h3 class="video-title">Creative Videos</h3>
+                <button class="sound-btn" aria-label="Toggle Sound">
+                  <svg class="icon-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                    <line x1="23" y1="9" x2="17" y2="15"></line>
+                    <line x1="17" y1="9" x2="23" y2="15"></line>
+                  </svg>
+                  <svg class="icon-unmuted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                    <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                  </svg>
+                </button>
+              </div>
+              
+              <div class="carousel-item" style="--i: 1;">
+                <video data-src="https://pub-0746497d0a204ba18d7c49f52f40c179.r2.dev/vid-2.mp4" poster="/vid-2-img.webp" preload="metadata" fetchpriority="low" muted loop playsinline></video>
+                <h3 class="video-title">Cinematic Trailers</h3>
+                <button class="sound-btn" aria-label="Toggle Sound">
+                  <svg class="icon-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                    <line x1="23" y1="9" x2="17" y2="15"></line>
+                    <line x1="17" y1="9" x2="23" y2="15"></line>
+                  </svg>
+                  <svg class="icon-unmuted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                    <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                  </svg>
+                </button>
+              </div>
+              
+              <div class="carousel-item" style="--i: 2;">
+                <video data-src="https://pub-0746497d0a204ba18d7c49f52f40c179.r2.dev/vid-3.mp4" poster="/vid-3-img.webp" preload="metadata" fetchpriority="low" muted loop playsinline></video>
+                <h3 class="video-title">Charismatic Ads</h3>
+              </div>
+              
+              <div class="carousel-item" style="--i: 3;">
+                <video data-src="https://pub-0746497d0a204ba18d7c49f52f40c179.r2.dev/vid-4.mp4" poster="/vid-4-img.webp" preload="metadata" fetchpriority="low" muted loop playsinline></video>
+                <h3 class="video-title">Any type of editing services</h3>
+                <button class="sound-btn" aria-label="Toggle Sound">
+                  <svg class="icon-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                    <line x1="23" y1="9" x2="17" y2="15"></line>
+                    <line x1="17" y1="9" x2="23" y2="15"></line>
+                  </svg>
+                  <svg class="icon-unmuted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                    <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                  </svg>
+                </button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button class="carousel-btn next-btn" aria-label="Next">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.8"
+             stroke-linecap="butt" stroke-linejoin="miter">
+          <polyline points="9 19 16 12 9 5"></polyline>
+        </svg>
+      </button>
+    </section>
+
+    <section id="about" class="page-section about-section">
+      <div class="container about-grid">
+        
+        <div class="about-content">
+          <p class="section-eyebrow">— Our Philosophy —</p>
+          <h2 class="section-title">THE STUDIO</h2>
+          <p class="section-text">
+            We craft high-end, cinematic visual experiences for bold brands.<br>
+            <em class="text-accent">Every frame is deliberate. Every shot is signature.</em>
+          </p>
+          
+          <div class="stat-row">
+            <div class="stat">
+              <span class="stat-number">1+</span>
+              <span class="stat-label">Year of Vision</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat">
+              <span class="stat-number">60+</span>
+              <span class="stat-label">Projects Delivered</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat">
+              <span class="stat-number">∞</span>
+              <span class="stat-label">Frame by Frame</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-client">
+          <p class="section-eyebrow">— Featured Client —</p>
+          <div class="client-card">
+            <img src="/media/the-beef-initiative-logo.png" alt="The Beef Initiative" class="client-logo" />
+            <blockquote class="client-quote">"Signature Cut Studios brought our vision to life with unparalleled cinematic quality. They don't just edit; they architect visual masterpieces that perfectly capture our brand's raw energy."</blockquote>
+            <div class="client-profile">
+              <img src="/media/june.png" alt="RS Ruffshot June" class="client-avatar" />
+              <div class="client-info">
+                <h4>RS "Ruffshot" June</h4>
+                <span>Co-Founder, Creative Strategy<br>The Beef Initiative</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="contact" class="page-section footer-section">
+      <div class="container">
+        <p class="section-eyebrow center">— Let's Create Something —</p>
+        <h2 class="section-title center">READY TO<br><em class="title-italic">Create?</em></h2>
+        
+        <div class="contact-form-container">
+          <form class="contact-form" action="/submit" method="POST">
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Name *</label>
+                <input type="text" id="name" name="name" required placeholder="John Doe">
+              </div>
+              <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" required placeholder="john@example.com">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="company">Company / Brand (Optional)</label>
+                <input type="text" id="company" name="company" placeholder="Your Brand Name">
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone Number (Optional)</label>
+                <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="budget">Anticipated Investment & Scale *</label>
+                <select id="budget" name="budget" required>
+                  <option value="" disabled selected>Select the scope of your vision</option>
+                  <option value="essential">Essential / Social Content (Under $2,500)</option>
+                  <option value="growth">Brand Growth ($2,500 - $5,000)</option>
+                  <option value="cinematic">High-Impact / Cinematic ($5,000 - $10,000)</option>
+                  <option value="campaign">Full-Scale Campaign ($10,000+)</option>
+                  <option value="guidance">I have the vision, but need guidance on scoping</option>
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label for="source">How did you hear about us? (Optional)</label>
+                <select id="source" name="source">
+                  <option value="" disabled selected>Select an option</option>
+                  <option value="referral">Word of Mouth / Referral</option>
+                  <option value="instagram">Instagram</option>
+                  <option value="twitter">Twitter / X</option>
+                  <option value="linkedin">LinkedIn</option>
+                  <option value="youtube">YouTube</option>
+                  <option value="search">Google Search</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="project_details">Project Details *</label>
+              <textarea id="project_details" name="project_details" required rows="4" placeholder="Tell us about the vision, timeline, and what kind of editing services you need..."></textarea>
+            </div>
+
+            <div class="form-row checkbox-row">
+              <label class="checkbox-label">
+                <input type="checkbox" name="book_call" value="yes" checked>
+                <span class="custom-checkbox"></span>
+                I'd like to book a discovery/sales call
+              </label>
+            </div>
+
+            <button type="submit" class="submit-btn">
+              SEND INQUIRY
+              <span class="contact-arrow">→</span>
+            </button>
+            
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <div class="replay-dialog" id="replayDialog">
+      <div class="replay-dialog-content">
+        <p>Would you like to experience the introductory sequence again?</p>
+        <div class="replay-dialog-actions">
+          <button class="replay-btn cancel-replay" id="cancelReplay">Cancel</button>
+          <button class="replay-btn confirm-replay" id="confirmReplay">Replay</button>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+
+</body>
+</html>
