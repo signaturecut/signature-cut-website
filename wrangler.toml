@@ -1,5 +1,9 @@
 name = "signature-cut-studios"
 compatibility_date = "2026-07-01"
 
+[[kv_namespaces]]
+binding = "CONTACT_FORMS"
+id = "9fe65f34eb6d4841abe042cc995e5345"
+
 [[send_email]]
 name = "EMAIL_SENDER"
