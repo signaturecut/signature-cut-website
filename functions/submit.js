@@ -1,5 +1,3 @@
-import { EmailMessage } from "cloudflare:email";
-
 export async function onRequestPost(context) {
   try {
     const formData = await context.request.formData();
@@ -18,10 +16,15 @@ export async function onRequestPost(context) {
     
     const submissionId = `msg_${Date.now()}`;
 
-    // 1. Save to Cloudflare KV Database
+    // 1. Safety Check: Verify Database exists
+    if (!context.env.CONTACT_FORMS) {
+      throw new Error("Cloudflare can't find the CONTACT_FORMS database. Check wrangler.toml");
+    }
+
+    // 2. Save to Cloudflare KV Database
     await context.env.CONTACT_FORMS.put(submissionId, JSON.stringify(data));
 
-    // 2. Draft the email for your Gmail inbox
+    // 3. Draft the email
     const emailContent = `
 NEW INQUIRY: Signature Cut Studios
 
@@ -40,21 +43,33 @@ PROJECT DETAILS:
 ${data.projectDetails}
     `.trim();
     
-    // 3. Send the email
-    const msg = new EmailMessage(
-      "noreply@signaturecutstudios.com",      
-      "signaturecutofficial@gmail.com",            
-      emailContent
-    );
-    await context.env.EMAIL_SENDER.send(msg);
+    // 4. Safety Check: Verify Email Sender exists
+    if (!context.env.EMAIL_SENDER) {
+      throw new Error("Cloudflare can't find the EMAIL_SENDER binding. Check wrangler.toml");
+    }
 
-    // 4. Return success to the frontend
+    // 5. Send the email (Using the new 2026 Cloudflare API Syntax)
+    await context.env.EMAIL_SENDER.send({
+      from: "noreply@signaturecutstudios.com",      
+      to: "signaturecutofficial@gmail.com",            
+      subject: "NEW INQUIRY: Signature Cut Studios",
+      text: emailContent
+    });
+
+    // 6. Return success to the frontend
     return new Response(JSON.stringify({ success: true }), {
       status: 200,
       headers: { "Content-Type": "application/json" }
     });
 
   } catch (err) {
-    return new Response(JSON.stringify({ success: false, error: "Server error" }), { status: 500 });
+    // This will now catch the EXACT error and send it back to us!
+    return new Response(JSON.stringify({ 
+      success: false, 
+      error: err.message || "Unknown Server Error" 
+    }), { 
+      status: 500,
+      headers: { "Content-Type": "application/json" }
+    });
   }
 }
