@@ -16,15 +16,12 @@ export async function onRequestPost(context) {
     
     const submissionId = `msg_${Date.now()}`;
 
-    // 1. Safety Check: Verify Database exists
-    if (!context.env.CONTACT_FORMS) {
-      throw new Error("Cloudflare can't find the CONTACT_FORMS database. Check wrangler.toml");
+    // 1. Save to Cloudflare KV Database (This still works perfectly!)
+    if (context.env.CONTACT_FORMS) {
+      await context.env.CONTACT_FORMS.put(submissionId, JSON.stringify(data));
     }
 
-    // 2. Save to Cloudflare KV Database
-    await context.env.CONTACT_FORMS.put(submissionId, JSON.stringify(data));
-
-    // 3. Draft the email
+    // 2. Draft the email
     const emailContent = `
 NEW INQUIRY: Signature Cut Studios
 
@@ -43,27 +40,29 @@ PROJECT DETAILS:
 ${data.projectDetails}
     `.trim();
     
-    // 4. Safety Check: Verify Email Sender exists
-    if (!context.env.EMAIL_SENDER) {
-      throw new Error("Cloudflare can't find the EMAIL_SENDER binding. Check wrangler.toml");
-    }
-
-    // 5. Send the email (Using the new 2026 Cloudflare API Syntax)
-    await context.env.EMAIL_SENDER.send({
-      from: "noreply@signaturecutstudios.com",      
-      to: "signaturecutofficial@gmail.com",            
-      subject: "NEW INQUIRY: Signature Cut Studios",
-      text: emailContent
+    // 3. Send the email using Web3Forms (Bypassing Cloudflare entirely)
+    await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        access_key: "e4f5e46b-3e22-43d4-ae1b-24ad714de751",
+        subject: "New Website Inquiry from " + data.name,
+        from_name: "Signature Cut Studios",
+        email: data.email, // This makes it so hitting "Reply" emails the client directly!
+        message: emailContent
+      }),
     });
 
-    // 6. Return success to the frontend
+    // 4. Return success to the frontend
     return new Response(JSON.stringify({ success: true }), {
       status: 200,
       headers: { "Content-Type": "application/json" }
     });
 
   } catch (err) {
-    // This will now catch the EXACT error and send it back to us!
     return new Response(JSON.stringify({ 
       success: false, 
       error: err.message || "Unknown Server Error" 
